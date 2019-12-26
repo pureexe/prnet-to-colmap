@@ -16,7 +16,7 @@ db.create_tables()
 mat_files = [f for f in os.listdir('mat') if f[-4:] == '.mat']
 
 #add camera
-cam_param = np.loadtxt('parameter/camera.txt')
+cam_param = np.asarray([307.2, 128.0, 128.0, 0.0])
 for i in range(len(mat_files)):
     cam_id = db.add_camera(model=2, width=256, height=256, params=cam_param)
     file_name = mat_files[i].split(MAT_POSTFIX)[0] + IMAGE_EXTENSION
