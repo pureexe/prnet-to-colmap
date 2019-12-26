@@ -4,7 +4,7 @@ from scipy.io import loadmat
 import numpy as np
 from utils.database import COLMAPDatabase,blob_to_array
 
-DATABASE_PATH = 'sqlite/putin.db'
+DATABASE_PATH = 'sqlite/putin_twoview.db'
 MAT_DIR = 'mat'
 MAT_POSTFIX = '_mesh'
 IMAGE_EXTENSION = '.jpg'
@@ -59,7 +59,8 @@ for from_id in range(1,len(mat_files)+1):
                     (kpt_index, images_keypoints_map[to_id][kpt_marker])
                 )
         # add match to database
-        db.add_matches(from_id, to_id, np.asarray(pairs))
+        #db.add_matches(from_id, to_id, np.asarray(pairs))
+        db.add_two_view_geometry(from_id, to_id, np.asarray(pairs))
 
 # commit (save) to db 
 db.commit()
