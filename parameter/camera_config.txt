@@ -1,0 +1,4 @@
+model 2
+widith 256
+heught 256
+prior_focal_length 0
