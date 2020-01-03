@@ -4,7 +4,7 @@ from scipy.io import loadmat
 import numpy as np
 from utils.database import COLMAPDatabase,blob_to_array
 
-DATABASE_PATH = 'sqlite/putin_twoview.db'
+DATABASE_PATH = 'sqlite/putin_without_projection.db'
 MAT_DIR = 'mat'
 MAT_POSTFIX = '_mesh'
 IMAGE_EXTENSION = '.jpg'
