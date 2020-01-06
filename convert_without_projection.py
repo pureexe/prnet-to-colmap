@@ -14,6 +14,8 @@ db = COLMAPDatabase.connect(DATABASE_PATH)
 db.create_tables()
 
 mat_files = [f for f in os.listdir('mat') if f[-4:] == '.mat']
+print(mat_files)
+exit()
 
 #add camera
 cam_param = np.asarray([307.2, 128.0, 128.0, 0.0])

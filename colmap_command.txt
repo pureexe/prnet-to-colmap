@@ -1,6 +1,9 @@
 colmap mapper --database_path sqlite/putin_68kpts.db --image_path image --Mapper.ba_refine_principal_point 1  --Mapper.num_threads 20 --Mapper.ba_global_use_pba 1 --Mapper.ba_global_pba_gpu_index 3 --Mapper.ba_local_max_num_iterations 300   --Mapper.ba_global_max_num_iterations 300 --Mapper.snapshot_path snapshot --output_path sparse
 
 
-colmap mapper --database_path sqlite/putin_68kpts.db --image_path image --output_path sparse
+colmap mapper --database_path sqlite/putin_without_projection.db --image_path image --output_path sparse --Mapper.num_threads 16
+
+colmap mapper --database_path sqlite/putin_68kpts.db --image_path image --output_path sparse  --Mapper.ba_global_pba_gpu_index 3   --Mapper.num_threads 16
+
 
 python read_write_model.py --output_model output_model --output_format .txt sparse/0/ .bin                                    
